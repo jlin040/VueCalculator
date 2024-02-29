@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vue Calculator</title>
-<link rel="stylesheet" href="calc.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue Calculator</title>
+    <link rel="stylesheet" href="calc.css">
 
 </head>
 
 <body>
 
+    <div id="app">
+        <input type="text" id="my_value" v-model="inputValue"/><br/>
+        <button @click="clear">clear</button>
+    </div>
 
+    <script type="module" src="calc.js"></script>
 </body>
 
 </html>
