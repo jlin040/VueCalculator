@@ -1,0 +1,10 @@
+[
+    {
+        "name": "clr",
+        "method": "clear"
+    },
+    {
+        "name": "del",
+        "method": "delete"
+    }
+]
