@@ -14,10 +14,45 @@
     <div id="app">
         <input type="text" id="my_value" v-model="inputValue"/><br/>
         <div id="buttons">
-            <div v-for="b in buttons">
-                <!-- <button @click="handleInput(b.method)">{{ b.name }}</button> -->
-                <button @click=b.method>{{ b.name }}</button>
-            </div>
+            <button @click="undo()">undo</button>
+
+            <br/><br/>
+
+            <button @click="clear()">clear</button>
+            <button @click="add( '(' )">&#40;</button>
+            <button @click="add( '\)' )">&#41;</button>
+            <button @click="add( ' mod ' )">mod</button>
+            <button @click="add( '&pi;' )">&pi;</button>
+
+            <br/><br/>
+
+            <button @click="add('7')">7</button>
+            <button @click="add('8')">8</button>
+            <button @click="add('9')">9</button>
+            <button @click="add( ' &divide; ' )">&divide;</button>
+            <button @click="add( ' &radic;(')">&radic;</button>
+
+            <br/><br/>
+
+            <button @click="add('4')">4</button>
+            <button @click="add('5')">5</button>
+            <button @click="add('6')">6</button>
+            <button @click="add( ' &times; ' )">&times;</button>
+            <button @click="add( '&sup2;')">&sup2;</button>
+            
+            <br/><br/>
+
+            <button @click="add('1')">1</button>
+            <button @click="add('2')">2</button>
+            <button @click="add('3')">3</button>
+            <button @click="add( ' &minus; ' )">&minus;</button>
+            <button @click="add( ' &#61; ')">&#61;</button>
+
+            <br/><br/>
+            <button @click="add('0')">0</button>
+            <button @click="add('.')">.</button>
+            <button @click="add('%')">%</button>
+            <button @click="add( ' &plus; ' )">&plus;</button>
         </div>
     </div>
 
