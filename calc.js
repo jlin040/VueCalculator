@@ -3,8 +3,6 @@ createApp({
     data() {
         return {
 
-            tdData: "<td>a</td>"
-
         };
     },
 
