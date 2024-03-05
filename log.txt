@@ -1,3 +1,5 @@
 3-1 - Jay: Connected calc.js module to calc.html. Added input text box.
 
 3-3 - Jay: Connected buttons.json information to calc.js. Buttons are getting rendered through the v-for loop, but issue parsing string to call to method.
+
+3-4 - Jay : Deleted buttons.json due to parsing error, and hard coded each button instead. Completed merge of both branches to main. Now need to handle calculations and change @click of =.
