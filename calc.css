@@ -49,3 +49,13 @@ input {
 .equals:hover {
     background-color: rgb(117, 117, 238);
 }
+
+.undo {
+    background-color: rgb(86, 123, 155);
+    text-align: center;
+    width:30%;
+}
+
+.undo:hover {
+    background-color: rgb(70, 112, 98);
+}
