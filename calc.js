@@ -3,7 +3,7 @@ import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 const app = createApp({
     data() {
         return {
-            inputValue: "",
+inputValue: "",
         };
     },
     methods: {
