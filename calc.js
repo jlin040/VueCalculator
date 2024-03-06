@@ -3,7 +3,7 @@ import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 const app = createApp({
     data() {
         return {
-inputValue: "",
+            inputValue: "",
         };
     },
     methods: {
@@ -16,6 +16,19 @@ inputValue: "",
         },
         add(value) {
             this.inputValue += value
+        },
+        calculate() {
+            console.log(this.inputValue)
+            let chars = [
+                {
+                    char: "&times;",
+                    replacement: "*"
+                }
+            ]
+            for (let c in chars) {
+                this.inputValue = this.inputValue.replaceAll(c["char"], c["replacement"])
+            }
+            this.inputValue = eval(this.inputValue)
         }
     },
 
