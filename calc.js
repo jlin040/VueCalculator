@@ -36,7 +36,33 @@ const app = createApp({
                 {
                     char: "²",
                     replacement: "** 2" 
-                }
+                },
+
+                {
+                char: "π",
+                replacement: "* Math.PI"
+            },
+            {
+                char: "* Math.PI",
+                replacement: " Math.PI"
+            },
+            {
+                char: "÷",
+                replacement: "/"
+            },
+            {
+                char: "mod",
+                replacement: "%"
+            },
+            // {
+            //     char: "%",
+            //     replacement: "* 0.01"
+            // },
+            //last
+            {
+                char: ")(",
+                replacement: " * "
+            }
 
 
 
