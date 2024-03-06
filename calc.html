@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vue Calculator</title>
-<link rel="stylesheet" href="calc.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue Calculator</title>
+    <link rel="stylesheet" href="calc.css">
 
 </head>
 
 <body>
 
-    <script type="module" src="our_app.js"></script>
 
     <div id="app">
 
@@ -20,55 +19,58 @@
                 <div class="calcName">
                 Calculator
                 </div>
+                    <br>
+                <div class="undo" @click="undo()">undo</div>
             </th>
             <tr class="screen">
                 <td colspan="5">
-                    0
+                    {{ screenValue }}
                 </td>
             </tr>
             <tr>
-                <td colspan="5"> <input type="text"> </td>
+                <td colspan="5"><input type="text" id="my_value" v-model="inputValue"/> </td>
             </tr>
             <tr>
-                <td class="delete"> DEL</td>
-                <td class="button"> ( </td>
-                <td class="button"> ) </td>
-                <td class="button"> mod </td>
-                <td class="button"> PI </td>
+                <td class="delete" @click="clear()">clear</td>
+                <td class="button" @click="add( '(' )">&#40;</td>
+                <td class="button" @click="add( '\)' )">&#41; </td>
+                <td class="button" @click="add( ' mod ' )">mod </td>
+                <td class="button" @click="add( '&pi;' )">&pi; </td>
             </tr>
             <tr>
-                <td class="button"> 7 </td>
-                <td class="button"> 8 </td>
-                <td class="button"> 9 </td>
-                <td class="button"> / </td>
-                <td class="button"> SQRT </td>
+                <td class="button" @click="add('7')">7 </td>
+                <td class="button" @click="add('8')">8 </td>
+                <td class="button" @click="add('9')">9 </td>
+                <td class="button" @click="add( ' &divide; ' )">&divide; </td>
+                <td class="button" @click="add( ' &radic;(')">&radic;</td>
             </tr>
             <tr>
-                <td class="button"> 4 </td>
-                <td class="button"> 5 </td>
-                <td class="button"> 6 </td>
-                <td class="button"> * </td>
-                <td class="button"> x^2 </td>
+                <td class="button" @click="add('4')">4 </td>
+                <td class="button" @click="add('5')">5 </td>
+                <td class="button" @click="add('6')">6 </td>
+                <td class="button" @click="add( ' &times; ' )">&times; </td>
+                <td class="button" @click="add( '&sup2;')">x&sup2;</td>
             </tr>
             <tr>
-                <td class="button"> 1 </td>
-                <td class="button"> 2 </td>
-                <td class="button"> 3 </td>
-                <td class="button"> - </td>
-                <td rowspan="2" style="border-bottom:none" class="equals">
-                    =
+                <td class="button" @click="add('1')">1 </td>
+                <td class="button" @click="add('2')">2 </td>
+                <td class="button" @click="add('3')">3 </td>
+                <td class="button" @click="add( ' - ' )">&minus;</td>
+                <td rowspan="2" style="border-bottom:none" class="equals" 
+                @click="calculate()">&#61;
                 </td>
             </tr>
             <tr>
-                <td class="button"> 0 </td>
-                <td class="button"> . </td>
-                <td class="button"> % </td>
-                <td class="button"> + </td>
-        </table>
+                <td class="button" @click="add('0')">0</td>
+                <td class="button" @click="add('.')">. </td>
+                <td class="button" @click="add('%')">%</td>
+                <td class="button" @click="add( ' &plus; ' )">&plus; </td>
+            </table>
 
+        </div>
     </div>
 
-
+    <script type="module" src="calc.js"></script>
 </body>
 
 </html>
