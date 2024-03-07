@@ -3,3 +3,8 @@
 3-3 - Jay: Connected buttons.json information to calc.js. Buttons are getting rendered through the v-for loop, but issue parsing string to call to method.
 
 3-4 - Jay : Deleted buttons.json due to parsing error, and hard coded each button instead. Completed merge of both branches to main. Now need to handle calculations and change @click of =.
+
+3-5 - Jay : Began using calculate function using eval(). Started replacing characters to let the string be readable by eval().
+
+3-6 - Jay : Finished (probably) all cases of calculator inputs that should be replaced in string. Merged branches to main. Need to finish history and undo button.
+

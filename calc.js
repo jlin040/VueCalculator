@@ -4,6 +4,9 @@ const app = createApp({
     data() {
         return {
             inputValue: "",
+            screenValue: "",
+            history: "",
+            lastUpdated: "",
         };
     },
     methods: {
@@ -12,7 +15,8 @@ const app = createApp({
         },
         undo() {
             if (this.inputValue == "") return
-            this.inputValue = this.inputValue.slice(0, -1)
+            // this.inputValue = this.inputValue.slice(0, -1)
+            this.inputValue = this.history
         },
         add(value) {
             this.inputValue += value
@@ -21,11 +25,25 @@ const app = createApp({
             console.log(this.inputValue)
             let chars = [
                 {
+                    char: "×",
+                    replacement: "*"
+                },
+
+                {
+                    char: "√(",
+                    replacement: "Math.sqrt("
+                },
+
+                {
+                    char: "²",
+                    replacement: "** 2" 
+                },
+                {
                     char: "π",
                     replacement: "* Math.PI"
                 },
                 {
-                    char: "* Math.PI",
+                    char: " * Math.PI",
                     replacement: " Math.PI"
                 },
                 {
@@ -33,12 +51,12 @@ const app = createApp({
                     replacement: "/"
                 },
                 {
-                    char: "mod",
-                    replacement: "%"
-                },
-                {
                     char: "%",
                     replacement: "* 0.01"
+                },
+                {
+                    char: "mod",
+                    replacement: "%"
                 },
                 //last
                 {
@@ -57,8 +75,13 @@ const app = createApp({
         }
     },
 
+    watch: {
+        lastUpdated(value, oldValue) {
+            this.history = value
+        },
+    },
+
 })
 
 const vm = app.mount('#app')
 window.app = vm
-        
