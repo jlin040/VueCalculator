@@ -1,10 +1,23 @@
+2-29 - Jo: Uploaded files for the project to get started. calc.css, calc.html, calc.js
+     - Jo: Started designing the calculator with html & css using a table.
+
 3-1 - Jay: Connected calc.js module to calc.html. Added input text box.
 
 3-3 - Jay: Connected buttons.json information to calc.js. Buttons are getting rendered through the v-for loop, but issue parsing string to call to method.
+    -  Jo: Added basic calculator design to look similar to linux mint calculator. Use "0" as placeholder data for buttons. Add all buttons and screen, just
+	looks. Added css to make look nice.
 
 3-4 - Jay : Deleted buttons.json due to parsing error, and hard coded each button instead. Completed merge of both branches to main. Now need to handle calculations and change @click of =.
+    -  Jo : Replaced placeholder zeros with buttons. Added button designs, colors, hovering, and sizing. Added css for
+	the input box, buttons, & table.
 
 3-5 - Jay : Began using calculate function using eval(). Started replacing characters to let the string be readable by eval().
+    - Jo : Bringing in calculation functionality from Jay. Added css for the undo button. Changed how the buttons work, from buttons
+	to td's you click on, designed those with colors, sizing & hover.
 
 3-6 - Jay : Finished (probably) all cases of calculator inputs that should be replaced in string. Merged branches to main. Need to finish history and undo button.
+    - Jo : Split finishing up functionality for all buttons. There was an error on my end for modulus and %. Added a watcher for historical values & undo.
 
+3-7 - Jo : Finished design for history. Undo button displays last input expression, last input expression shown on
+	the left side of calculator. All buttons work, all functions work. Added computed value. Calculator done,
+	merged to main.
