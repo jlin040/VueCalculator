@@ -7,6 +7,10 @@ const app = createApp({
             screenValue: "",
             history: "",
             lastUpdated: "",
+
+            revertBG: "false",
+            isUse: "no",
+            coolQuestion: "true",
         };
     },
     methods: {
@@ -15,7 +19,6 @@ const app = createApp({
         },
         undo() {
             if (this.inputValue == "") return
-            // this.inputValue = this.inputValue.slice(0, -1)
             this.inputValue = this.history
         },
         add(value) {
@@ -58,22 +61,32 @@ const app = createApp({
                     char: "mod",
                     replacement: "%"
                 },
-                //last
                 {
                     char: ")(",
                     replacement: " * "
                 }
+
             ]
             for (let c of chars) {
-                if (c["char"] == ")(") this.inputValue = this.inputValue.replaceAll(" ", "")
-                console.log(c)
-                console.log("before", this.inputValue)
                 this.inputValue = this.inputValue.replaceAll(c["char"], c["replacement"])
-                console.log("after", this.inputValue)
+                this.lastUpdated = this.inputValue
             }
             this.inputValue = eval(this.inputValue)
+            this.screenValue = this.inputValue
+            
         }
     },
+
+    computed: {
+        isCool() {
+          if(this.coolQuestion){
+            return 'you are cool'
+          }
+          else {
+            return 'not cool'
+          }
+        }
+      },
 
     watch: {
         lastUpdated(value, oldValue) {
@@ -85,3 +98,5 @@ const app = createApp({
 
 const vm = app.mount('#app')
 window.app = vm
+
+    

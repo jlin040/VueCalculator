@@ -1,6 +1,11 @@
+p {
+    text-align: center;
+    font-size: 12px;
+}
+
 table {
     height:800px;
-    width:400px;
+    width:800px;
     border: 4px solid black;
     margin:auto;
     background-color: rgb(65, 63, 63);
@@ -20,6 +25,7 @@ input {
     text-align: right;
     font-size: 50px;
     color: white;
+    border: 0px;
 
 }
 
@@ -58,4 +64,10 @@ input {
 
 .undo:hover {
     background-color: rgb(70, 112, 98);
+}
+
+.history {
+    font-size: 32px;
+    text-align: center;
+    border: 0px;
 }

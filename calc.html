@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vue Calculator</title>
     <link rel="stylesheet" href="calc.css">
+
 </head>
 
 <body>
-
+    
 
     <div id="app">
 
@@ -22,7 +23,10 @@
                 <div class="undo" @click="undo()">undo</div>
             </th>
             <tr class="screen">
-                <td colspan="5">
+                <td class="history" colspan="2">
+                    {{ history }}
+                </td>
+                <td colspan="3">
                     {{ screenValue }}
                 </td>
             </tr>
@@ -62,13 +66,23 @@
             <tr>
                 <td class="button" @click="add('0')">0</td>
                 <td class="button" @click="add('.')">. </td>
-                <td class="button" @click="add(' % ')">%</td>
-                <td class="button" @click="add( ' + ' )">&plus; </td>
+                <td class="button" @click="add('%')">%</td>
+                <td class="button" @click="add( ' &plus; ' )">&plus; </td>
             </table>
 
+            <form>
+                <p style="text-align: center;">
+                    <label>
+                        <br>
+                        <input type="checkbox" v-model="coolQuestion">
+                        &nbsp&nbspDo you like math? Click if Yes.
+                     </label>
+                </p>
+                <p> 
+                    {{ isCool }}
+                </p>
+                </form>
         </div>
-        </div>
-    </div>
 
     <script type="module" src="calc.js"></script>
 </body>
