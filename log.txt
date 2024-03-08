@@ -21,3 +21,4 @@
 3-7 - Jo : Finished design for history. Undo button displays last input expression, last input expression shown on
 	the left side of calculator. All buttons work, all functions work. Added computed value. Calculator done,
 	merged to main.
+    - Jay : Found and fixed bug with unnecessary zeros (ex:  1 + 00002) Implemented syntax error handling.

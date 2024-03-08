@@ -25,6 +25,7 @@ const app = createApp({
             this.inputValue += value
         },
         calculate() {
+            try {
             console.log(this.inputValue)
             let chars = [
                 {
@@ -69,11 +70,23 @@ const app = createApp({
             ]
             for (let c of chars) {
                 this.inputValue = this.inputValue.replaceAll(c["char"], c["replacement"])
-                this.lastUpdated = this.inputValue
             }
+            for (let i = 0; i < this.inputValue.length; i++) {
+                let prev = this.inputValue[i - 1]
+                if (this.inputValue[i] === "0") {
+                    if ( (isNaN(prev) && prev != "." ) || i == 0 || prev == " ") {
+                        this.inputValue = this.inputValue.substring(0, i) + this.inputValue.substring(i + 1)
+                        i--
+                    }
+                }
+            }
+            this.lastUpdated = this.inputValue
             this.inputValue = eval(this.inputValue)
             this.screenValue = this.inputValue
             
+            } catch (e) {
+                this.inputValue = "error, please clear and reenter expression"
+            }
         }
     },
 
